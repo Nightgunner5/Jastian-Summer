@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "5032"
-	"mapversion" "45"
+	"mapversion" "46"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "45"
+	"mapversion" "46"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -11403,7 +11403,7 @@ entity
 	"squad_id" "squad_1"
 	"starting_primary" "asw_weapon_minigun"
 	"starting_secondary" "asw_weapon_flamer"
-	"origin" "256 264 8"
+	"origin" "448 320 8"
 	editor
 	{
 		"color" "0 255 0"

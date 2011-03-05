@@ -3,3 +3,11 @@
 *.log
 *.prt
 *.vmx
+*.cache
+Debug
+Release
+Debug_swarm
+Release_swarm
+*.sdf
+*.rej
+*.orig
