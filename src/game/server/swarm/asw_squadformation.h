@@ -21,7 +21,8 @@ class CASW_SquadFormation : public CServerOnlyEntity
 	DECLARE_CLASS( CASW_SquadFormation, CServerOnlyEntity );
 
 public:
-	CASW_SquadFormation() : m_flLastSquadUpdateTime(0) {Reset();};
+	CASW_SquadFormation() : m_flLastSquadUpdateTime(0) {Reset();}
+	~CASW_SquadFormation();
 
 	/// local compiler constants
 	enum 
@@ -134,7 +135,7 @@ private:
 
 //extern CASW_SquadFormation g_ASWSquadFormation;
 
-static CUtlDict<CASW_SquadFormation *, unsigned int> g_SquadFormations;
+extern CUtlDict<CASW_SquadFormation *, unsigned int> g_SquadFormations;
 
 inline CASW_Marine *CASW_SquadFormation::Squaddie( unsigned int slotnum ) const 
 {

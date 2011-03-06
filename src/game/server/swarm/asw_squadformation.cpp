@@ -25,6 +25,20 @@ ConVar asw_squad_debug( "asw_squad_debug", "1", FCVAR_CHEAT, "Draw debug overlay
 
 LINK_ENTITY_TO_CLASS( asw_squadformation, CASW_SquadFormation );
 
+CUtlDict<CASW_SquadFormation *, unsigned int> g_SquadFormations;
+
+CASW_SquadFormation::~CASW_SquadFormation()
+{
+	for ( unsigned int i = 0; i < g_SquadFormations.Count(); i++ )
+	{
+		if ( g_SquadFormations[i]->entindex() == entindex() )
+		{
+			g_SquadFormations.RemoveAt( i );
+			break;
+		}
+	}
+}
+
 void CASW_SquadFormation::LevelInitPostEntity()
 {
 	CHintCriteria hintCriteria;
