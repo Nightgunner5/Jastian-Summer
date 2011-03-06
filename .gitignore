@@ -11,3 +11,4 @@ Release_swarm
 *.sdf
 *.rej
 *.orig
+*.ipch

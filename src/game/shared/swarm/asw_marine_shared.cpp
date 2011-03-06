@@ -226,6 +226,8 @@ Vector CASW_Marine::EyePosition( void )
 
 	Vector eyes;
 	GetAttachment( "eyes", eyes );
+	if ( !IsInhabited() )
+		return eyes;
 
 	Vector eyes_noz = eyes;
 	eyes_noz.z = GetAbsOrigin().z;

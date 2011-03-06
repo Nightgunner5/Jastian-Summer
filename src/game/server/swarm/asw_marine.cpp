@@ -816,7 +816,7 @@ void CASW_Marine::PhysicsSimulate( void )
 // think only occurs when uninhabited  (in singleplayer at least, not sure about multi)
 // this is because we're not calling BaseClass::PhysicsSimulate
 void CASW_Marine::Think( void )
-{			
+{
 	if (!IsInhabited())
 	{
 		BaseClass::Think();
@@ -824,6 +824,11 @@ void CASW_Marine::Think( void )
 		ASWThinkEffects();
 
 		m_fCachedIdealSpeed = MaxSpeed();
+
+		if ( NeedToUpdateSquad() )
+		{
+			GetSquadFormation()->UpdateFollowPositions();
+		}
 	}
 }
 
