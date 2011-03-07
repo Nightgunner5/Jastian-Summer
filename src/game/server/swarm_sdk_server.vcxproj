@@ -744,6 +744,7 @@ exit 1
     <ClCompile Include="swarm\jas_alien_controller.cpp" />
     <ClCompile Include="swarm\jas_clone.cpp" />
     <ClCompile Include="swarm\jas_fireflies.cpp" />
+    <ClCompile Include="swarm\jas_marine_spawner.cpp" />
     <ClCompile Include="tanktrain.cpp" />
     <ClCompile Include="team.cpp" />
     <ClCompile Include="..\shared\teamplay_gamerules.cpp" />
@@ -1419,6 +1420,7 @@ exit 1
     <ClInclude Include="..\..\public\stringregistry.h" />
     <ClInclude Include="swarm\jas_alien_controller.h" />
     <ClInclude Include="swarm\jas_clone.h" />
+    <ClInclude Include="swarm\jas_marine_spawner.h" />
     <ClInclude Include="team.h" />
     <ClInclude Include="..\shared\teamplay_gamerules.h" />
     <ClInclude Include="..\shared\tempentity.h" />

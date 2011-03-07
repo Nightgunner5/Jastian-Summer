@@ -2315,6 +2315,9 @@
     <ClCompile Include="swarm\jas_clone.cpp">
       <Filter>Source Files\Swarm</Filter>
     </ClCompile>
+    <ClCompile Include="swarm\jas_marine_spawner.cpp">
+      <Filter>Source Files\Swarm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\shared\achievement_saverestore.h">
@@ -4724,6 +4727,9 @@
       <Filter>Source Files\Swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\jas_clone.h">
+      <Filter>Source Files\Swarm</Filter>
+    </ClInclude>
+    <ClInclude Include="swarm\jas_marine_spawner.h">
       <Filter>Source Files\Swarm</Filter>
     </ClInclude>
   </ItemGroup>
