@@ -12,3 +12,4 @@ Release_swarm
 *.rej
 *.orig
 *.ipch
+*.suo
