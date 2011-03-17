@@ -17,6 +17,7 @@ public:
 	virtual void Think();
 	
 	void InputSpawnMarine( inputdata_t &inputdata );
+	void InputForgetMarine( inputdata_t &inputdata );
 	void InputIncrementSquadId( inputdata_t &inputdata );
 
 protected:

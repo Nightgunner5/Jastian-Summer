@@ -669,7 +669,13 @@ void ClientModeASW::OverrideView( CViewSetup *pSetup )
 		pSetup->m_OrthoBottom = h;
 	}
 	else	// asw: make sure we're not tilted
-	{		
+	{
+#ifdef CLIENT_DLL
+		if ( asw_camera_shake.GetBool() )
+		{
+			GetViewEffects()->ApplyShake( pSetup->origin, pSetup->angles, 1.0 );
+		}
+#endif
 		pSetup->angles[ROLL] = 0;
 	}
 

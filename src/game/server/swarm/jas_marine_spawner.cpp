@@ -21,6 +21,7 @@ BEGIN_DATADESC( CJaS_Marine_Spawner )
 	DEFINE_OUTPUT( m_OutputMarineDied, "MarineDied" ),
 	
 	DEFINE_INPUTFUNC( FIELD_VOID, "SpawnMarine", InputSpawnMarine ),
+	DEFINE_INPUTFUNC( FIELD_VOID, "ForgetMarine", InputForgetMarine ),
 	DEFINE_INPUTFUNC( FIELD_VOID, "IncrementSquadId", InputIncrementSquadId )
 END_DATADESC()
 
@@ -72,6 +73,12 @@ void CJaS_Marine_Spawner::InputSpawnMarine( inputdata_t &inputdata )
 	m_hMarine = pMarine;
 
 	m_bHaveSpawnedMarine = true;
+}
+
+void CJaS_Marine_Spawner::InputForgetMarine( inputdata_t &inputdata )
+{
+	m_bHaveSpawnedMarine = false;
+	m_hMarine = NULL;
 }
 
 void CJaS_Marine_Spawner::InputIncrementSquadId( inputdata_t &inputdata )
