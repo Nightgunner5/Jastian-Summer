@@ -419,6 +419,7 @@ public:
 	float m_flLastHurtAlienTime;
 	float m_flLastSquadEnemyTime;
 	float m_flLastSquadShotAlienTime;
+	float m_flLastSwitchedWeaponTime;
 	bool m_bInCombat;
 
 	virtual bool FValidateHintType( CAI_Hint *pHint );

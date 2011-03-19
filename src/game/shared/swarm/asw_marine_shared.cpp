@@ -86,6 +86,10 @@ bool CASW_Marine::Weapon_Switch( CBaseCombatWeapon *pWeapon, int viewmodelindex 
 	if (GetASWWeapon(0)!= pWeapon && GetASWWeapon(1) != pWeapon && GetASWWeapon(2) != pWeapon)
 		return false;
 
+#ifdef GAME_DLL
+	m_flLastSwitchedWeaponTime = gpGlobals->curtime;
+#endif
+
 	if (BaseClass::Weapon_Switch( pWeapon, viewmodelindex ))
 	{
 		if (pWeapon != GetLastWeaponSwitchedTo() && ASWGameRules() && ASWGameRules()->GetGameState() >= ASW_GS_INGAME )

@@ -545,6 +545,7 @@ CASW_Marine::CASW_Marine() : m_RecentMeleeHits( 16, 16 )
 	m_flLastSquadEnemyTime = 0.0f;
 	m_flLastSquadShotAlienTime = 0.0f;
 	m_flLastHurtAlienTime = 0.0f;
+	m_flLastSwitchedWeaponTime = 0.0f;
 
 	m_flLastGooScanTime = 0.0f;
 	m_fLastAmmoCheckTime = 0.0f;
@@ -825,6 +826,10 @@ void CASW_Marine::Think( void )
 
 		m_fCachedIdealSpeed = MaxSpeed();
 
+		if ( GetEnemy() ) {
+			CheckAutoWeaponSwitch();
+		}
+
 		if ( NeedToUpdateSquad() )
 		{
 			GetSquadFormation()->UpdateFollowPositions();
@@ -900,6 +905,7 @@ bool CASW_Marine::KeyValue( const char *szKeyName, const char *szValue )
 				pWeapon->m_iClip1 = 9999;
 				GiveAmmo(9999, pWeapon->GetPrimaryAmmoType());
 				Weapon_Equip_In_Index( pWeapon, 0 );
+				Weapon_Switch( pWeapon );
 			}
 			bResult = true;
 		}

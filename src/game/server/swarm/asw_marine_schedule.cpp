@@ -853,13 +853,27 @@ int CASW_Marine::SelectHealSchedule()
 {
 	// iterate over all teammates, looking for most needy target for health
 	CASW_Game_Resource *pGameResource = ASWGameResource();
-	for ( int i=0; i<pGameResource->GetMaxMarineResources(); i++ )
+	for ( int i = 0; i < pGameResource->GetMaxMarineResources(); i++ )
 	{
 		CASW_Marine_Resource* pMarineResource = pGameResource->GetMarineResource(i);
 		if ( !pMarineResource )
 			continue;
 
 		CASW_Marine* pMarine = pMarineResource->GetMarineEntity();
+		if ( !pMarine )
+			continue;
+
+		// see if the current marine can use ammo I have
+		if ( CanHeal() && pMarine->GetHealth() < pMarine->GetMaxHealth() * MARINE_START_HEAL_THRESHOLD )
+		{
+			m_hHealTarget = pMarine;
+			return SCHED_ASW_HEAL_MARINE;
+		}
+	}
+	CASW_SquadFormation *pSquad = GetSquadFormation();
+	for ( unsigned int i = 0; i < CASW_SquadFormation::MAX_SQUAD_SIZE; i++ )
+	{
+		CASW_Marine* pMarine = pSquad->Squaddie( i );
 		if ( !pMarine )
 			continue;
 
@@ -2844,10 +2858,14 @@ bool CASW_Marine::OverrideMoveFacing( const AILocalMoveGoal_t &move, float flInt
 // check for AI changing weapon if he's getting hurt and has a non-offensive weapon equipped
 bool CASW_Marine::CheckAutoWeaponSwitch()
 {
+	// AI marines cannot switch weapons more than once every 2 seconds.
+	if ( m_flLastSwitchedWeaponTime <= gpGlobals->curtime - 2.0f )
+		return false;
+
 	CASW_Weapon *pWeapon = GetActiveASWWeapon();
 	CBaseEntity *pEnemy = GetEnemy();
 	vec_t fEnemyDistance = pEnemy ? pEnemy->GetAbsOrigin().DistTo( GetAbsOrigin() ) : 0;
-	if (pWeapon && pWeapon->IsOffensiveWeapon())
+	if (pWeapon && pWeapon->IsOffensiveWeapon() && pEnemy)
 	{
 		const char *szWeaponClass = pWeapon->GetClassname();
 		CASW_Weapon *pBestWeapon = NULL;
@@ -2892,6 +2910,9 @@ bool CASW_Marine::CheckAutoWeaponSwitch()
 		}
 		return false;
 	}
+
+	if ( pWeapon && pWeapon->IsOffensiveWeapon() )
+		return false;
 
 	// marine doesn't auto switch weapons the first two times he's hurt
 	m_iHurtWithoutOffensiveWeapon++;
