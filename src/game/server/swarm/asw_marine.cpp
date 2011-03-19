@@ -3949,7 +3949,7 @@ void CASW_Marine::SetModelFromProfile()
 		SetModel(pProfile->m_ModelName);
 		m_nSkin = pProfile->m_SkinNum;
 		//set the backpack bodygroup
-		SetBodygroup ( 1, m_nSkin );
+		SetBodygroup ( 1, pProfile->m_iMarineClass == MARINE_CLASS_INFANTRY ? 0 : m_nSkin );
 		
 		//Msg("%s Setting skin number to %d\n", pProfile->m_ShortName, m_nSkin);
 	}
