@@ -2859,13 +2859,13 @@ bool CASW_Marine::OverrideMoveFacing( const AILocalMoveGoal_t &move, float flInt
 bool CASW_Marine::CheckAutoWeaponSwitch()
 {
 	// AI marines cannot switch weapons more than once every 2 seconds.
-	if ( m_flLastSwitchedWeaponTime <= gpGlobals->curtime - 2.0f )
+	if ( !GetEnemy() || m_flLastSwitchedWeaponTime <= gpGlobals->curtime - 2.0f )
 		return false;
 
 	CASW_Weapon *pWeapon = GetActiveASWWeapon();
 	CBaseEntity *pEnemy = GetEnemy();
 	vec_t fEnemyDistance = pEnemy ? pEnemy->GetAbsOrigin().DistTo( GetAbsOrigin() ) : 0;
-	if (pWeapon && pWeapon->IsOffensiveWeapon() && pEnemy)
+	if (pWeapon && pWeapon->IsOffensiveWeapon())
 	{
 		const char *szWeaponClass = pWeapon->GetClassname();
 		CASW_Weapon *pBestWeapon = NULL;

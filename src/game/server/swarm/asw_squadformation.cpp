@@ -29,14 +29,7 @@ CUtlDict<CASW_SquadFormation *, unsigned int> g_SquadFormations;
 
 CASW_SquadFormation::~CASW_SquadFormation()
 {
-	for ( unsigned int i = 0; i < g_SquadFormations.Count(); i++ )
-	{
-		if ( g_SquadFormations[i]->entindex() == entindex() )
-		{
-			g_SquadFormations.RemoveAt( i );
-			break;
-		}
-	}
+	g_SquadFormations.Purge();
 }
 
 void CASW_SquadFormation::LevelInitPostEntity()

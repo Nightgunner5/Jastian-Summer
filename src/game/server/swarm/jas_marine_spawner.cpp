@@ -31,7 +31,9 @@ CJaS_Marine_Spawner::CJaS_Marine_Spawner()
 	m_hMarine = NULL;
 	m_bHaveSpawnedMarine = false;
 }
-CJaS_Marine_Spawner::~CJaS_Marine_Spawner() {}
+CJaS_Marine_Spawner::~CJaS_Marine_Spawner() {
+	m_hMarine = NULL;
+}
 
 void CJaS_Marine_Spawner::Spawn()
 {
