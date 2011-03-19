@@ -347,6 +347,8 @@ BEGIN_DATADESC( CASW_Marine )
 	DEFINE_FIELD( m_iPowerupType, FIELD_INTEGER ),
 	DEFINE_FIELD( m_flPowerupExpireTime, FIELD_FLOAT ),
 	DEFINE_FIELD( m_bPowerupExpires, FIELD_BOOLEAN ),
+
+	DEFINE_FIELD( m_hSquadFormation, FIELD_EHANDLE ),
 END_DATADESC()
 
 extern ConVar weapon_showproficiency;
@@ -3426,7 +3428,7 @@ void CASW_Marine::Event_Killed( const CTakeDamageInfo &info )
 		ASWGameRules()->m_fMarineDeathTime = gpGlobals->curtime;
 		ASWGameRules()->m_vMarineDeathPos = GetAbsOrigin();
 		ASWGameRules()->m_nMarineForDeathCam = ASWGameResource()->GetMarineResourceIndex( GetMarineResource() );	// TODO: Is this ok!?
-
+		
 		// Check mission status
 		if ( ASWGameRules()->GetMissionManager() )
 		{

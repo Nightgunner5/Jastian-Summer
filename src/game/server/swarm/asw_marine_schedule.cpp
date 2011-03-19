@@ -2872,18 +2872,17 @@ bool CASW_Marine::CheckAutoWeaponSwitch()
 	vec_t fEnemyDistance = pEnemy ? pEnemy->GetAbsOrigin().DistTo( GetAbsOrigin() ) : 0;
 	if (pWeapon && pWeapon->IsOffensiveWeapon())
 	{
-		const char *szWeaponClass = pWeapon->GetClassname();
 		CASW_Weapon *pBestWeapon = NULL;
 		if (fEnemyDistance >= 48.0f)
 		{
-			if (!Q_stricmp( szWeaponClass, "asw_weapon_flamer" ) || !Q_stricmp( szWeaponClass, "asw_weapon_chainsaw" ))
+			if ( pWeapon->Classify() == CLASS_ASW_FLAMER && pWeapon->Classify() == CLASS_ASW_CHAINSAW )
 			{
 				for (int i=0;i<ASW_MAX_MARINE_WEAPONS;i++)
 				{
 					pWeapon = GetASWWeapon(i);
-					szWeaponClass = pWeapon ? pWeapon->GetClassname() : "";
-					if (pWeapon && pWeapon->IsOffensiveWeapon() && Q_stricmp( szWeaponClass, "asw_weapon_flamer" )
-						&& Q_stricmp( szWeaponClass, "asw_weapon_chainsaw" ))
+					if ( pWeapon && pWeapon->IsOffensiveWeapon() &&
+						pWeapon->Classify() == CLASS_ASW_FLAMER &&
+						pWeapon->Classify() == CLASS_ASW_CHAINSAW )
 					{
 						pBestWeapon = pWeapon;
 						break;
@@ -2893,14 +2892,14 @@ bool CASW_Marine::CheckAutoWeaponSwitch()
 		}
 		else
 		{
-			if (Q_stricmp( szWeaponClass, "asw_weapon_flamer" ) && Q_stricmp( szWeaponClass, "asw_weapon_chainsaw" ))
+			if ( pWeapon->Classify() == CLASS_ASW_FLAMER && pWeapon->Classify() == CLASS_ASW_CHAINSAW )
 			{
 				for (int i=0;i<ASW_MAX_MARINE_WEAPONS;i++)
 				{
 					pWeapon = GetASWWeapon(i);
-					szWeaponClass = pWeapon ? pWeapon->GetClassname() : "";
-					if (pWeapon && pWeapon->IsOffensiveWeapon() && (!Q_stricmp( szWeaponClass, "asw_weapon_flamer" )
-						|| !Q_stricmp( szWeaponClass, "asw_weapon_chainsaw" )))
+					if ( pWeapon && pWeapon->IsOffensiveWeapon() &&
+						pWeapon->Classify() == CLASS_ASW_FLAMER &&
+						pWeapon->Classify() == CLASS_ASW_CHAINSAW )
 					{
 						pBestWeapon = pWeapon;
 						break;
@@ -2919,6 +2918,11 @@ bool CASW_Marine::CheckAutoWeaponSwitch()
 	if ( pWeapon && pWeapon->IsOffensiveWeapon() )
 		return false;
 
+	// Healing teammates is more important than shooting aliens that are already under attack.
+	// Also, you look stupid when you lean backwards and rapidly shapeshift your weapons into each other during a fight.
+	if ( m_hHealTarget.Get() && pWeapon->Classify() == CLASS_ASW_HEAL_GUN )
+		return false;
+
 	// marine doesn't auto switch weapons the first two times he's hurt
 	m_iHurtWithoutOffensiveWeapon++;
 	if (m_iHurtWithoutOffensiveWeapon <3)
@@ -2926,7 +2930,7 @@ bool CASW_Marine::CheckAutoWeaponSwitch()
 
 	// find best offensive weapon
 	CASW_Weapon *pBestWeapon = NULL;
-	for (int i=0;i<ASW_MAX_MARINE_WEAPONS;i++)
+	for ( int i = 0; i < ASW_MAX_MARINE_WEAPONS; i++ )
 	{
 		pWeapon = GetASWWeapon(i);
 		if (pWeapon && pWeapon->IsOffensiveWeapon())

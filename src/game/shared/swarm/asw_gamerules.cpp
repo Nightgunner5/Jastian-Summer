@@ -154,7 +154,7 @@ extern ConVar old_radius_damage;
 #endif
 
 ConVar asw_vote_duration("asw_vote_duration", "30", FCVAR_REPLICATED, "Time allowed to vote on a map/campaign/saved game change.");
-ConVar asw_marine_death_cam("asw_marine_death_cam", "0", FCVAR_CHEAT | FCVAR_REPLICATED, "Use death cam");
+ConVar asw_marine_death_cam("asw_marine_death_cam", "1", FCVAR_CHEAT | FCVAR_REPLICATED, "Use death cam");
 ConVar asw_marine_death_cam_time_interp("asw_marine_death_cam_time_interp", "0.5", FCVAR_CHEAT | FCVAR_REPLICATED, "Time to blend into the death cam");
 ConVar asw_marine_death_cam_time_interp_out("asw_marine_death_cam_time_interp_out", "0.75", FCVAR_CHEAT | FCVAR_REPLICATED, "Time to blend out of the death cam");
 ConVar asw_marine_death_cam_time("asw_marine_death_cam_time", "0.4", FCVAR_CHEAT | FCVAR_REPLICATED, "Time to do the slowdown death cam");
@@ -3119,7 +3119,7 @@ void CAlienSwarm::MissionComplete( bool bSuccess )
 	else
 	{
 #ifdef JASTIANSUMMER_DLL
-		engine->ServerCommand( "load autosave\n" );
+		engine->ServerCommand( "wait 500; load autosave\n" );
 #endif
 		m_bMissionFailed = true;
 		m_nFailAdvice = ASWFailAdvice()->UseCurrentFailAdvice();

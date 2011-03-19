@@ -1810,5 +1810,8 @@ int CASWInput::CAM_IsThirdPerson( int nSlot )
 		return 0;
 	}
 	
+	if ( ASWGameRules() && ASWGameRules()->m_nMarineForDeathCam.Get() != -1 )
+		return 1;
+
 	return CInput::CAM_IsThirdPerson( nSlot );
 }
