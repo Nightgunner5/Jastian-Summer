@@ -2863,7 +2863,12 @@ bool CASW_Marine::CheckAutoWeaponSwitch()
 		return false;
 
 	CASW_Weapon *pWeapon = GetActiveASWWeapon();
+	if ( pWeapon && pWeapon->m_bSwitchingWeapons.Get() )
+		return false;
+
 	CBaseEntity *pEnemy = GetEnemy();
+	if ( pEnemy->Classify() == CLASS_ASW_ALIEN_GOO )
+		return false; // Weapon switching for Biomass is handled elsewhere.
 	vec_t fEnemyDistance = pEnemy ? pEnemy->GetAbsOrigin().DistTo( GetAbsOrigin() ) : 0;
 	if (pWeapon && pWeapon->IsOffensiveWeapon())
 	{
