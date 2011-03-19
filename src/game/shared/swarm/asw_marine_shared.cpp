@@ -243,10 +243,18 @@ Vector CASW_Marine::EyePosition( void )
 		eyes.x = GetAbsOrigin().x;
 		eyes.y = GetAbsOrigin().y;
 		AddEffects( EF_NODRAW );
+#ifdef GAME_DLL
+		if ( m_PlayerColonistBack.Get() )
+			m_PlayerColonistBack->AddEffects( EF_NODRAW );
+#endif
 	}
 	else
 	{
 		RemoveEffects( EF_NODRAW );
+#ifdef GAME_DLL
+		if ( m_PlayerColonistBack.Get() )
+			m_PlayerColonistBack->RemoveEffects( EF_NODRAW );
+#endif
 	}
 
 	return eyes;
