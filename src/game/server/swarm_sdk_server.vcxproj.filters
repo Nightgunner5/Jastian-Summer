@@ -2318,6 +2318,9 @@
     <ClCompile Include="swarm\jas_marine_spawner.cpp">
       <Filter>Source Files\Swarm</Filter>
     </ClCompile>
+    <ClCompile Include="swarm\jas_generatorsparks.cpp">
+      <Filter>Source Files\Swarm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\shared\achievement_saverestore.h">

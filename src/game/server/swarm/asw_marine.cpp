@@ -783,7 +783,7 @@ void CASW_Marine::Precache()
 
 void CASW_Marine::PrecacheSpeech()
 {
-	if (m_MarineSpeech && GetMarineResource())
+	if (m_MarineSpeech && GetMarineProfile())
 		m_MarineSpeech->Precache();
 }
 

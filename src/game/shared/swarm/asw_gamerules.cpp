@@ -29,8 +29,9 @@
 	#include "globalstate.h"
 	#include "ai_basenpc.h"
 	#include "asw_game_resource.h"
-		
+
 	#include "asw_marine.h"
+	#include "asw_squadformation.h"
 	#include "asw_spawner.h"
 	#include "asw_pickup.h"
 	#include "asw_flare_projectile.h"
@@ -3120,6 +3121,9 @@ void CAlienSwarm::MissionComplete( bool bSuccess )
 	{
 #ifdef JASTIANSUMMER_DLL
 		engine->ServerCommand( "wait 500; load autosave\n" );
+#ifdef GAME_DLL
+		g_SquadFormations.Purge();
+#endif
 #endif
 		m_bMissionFailed = true;
 		m_nFailAdvice = ASWFailAdvice()->UseCurrentFailAdvice();

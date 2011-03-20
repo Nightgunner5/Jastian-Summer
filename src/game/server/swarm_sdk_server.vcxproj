@@ -744,6 +744,7 @@ exit 1
     <ClCompile Include="swarm\jas_alien_controller.cpp" />
     <ClCompile Include="swarm\jas_clone.cpp" />
     <ClCompile Include="swarm\jas_fireflies.cpp" />
+    <ClCompile Include="swarm\jas_generatorsparks.cpp" />
     <ClCompile Include="swarm\jas_marine_spawner.cpp" />
     <ClCompile Include="tanktrain.cpp" />
     <ClCompile Include="team.cpp" />

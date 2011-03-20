@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "5032"
-	"mapversion" "73"
+	"mapversion" "76"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "73"
+	"mapversion" "76"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -7618,7 +7618,7 @@ entity
 entity
 {
 	"id" "2574"
-	"classname" "jas_fireflies"
+	"classname" "jas_generatorsparks"
 	"targetname" "zap_target"
 	"origin" "0 -256 64"
 	editor
@@ -7627,22 +7627,6 @@ entity
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 14500]"
-	}
-}
-entity
-{
-	"id" "2586"
-	"classname" "info_node"
-	"angles" "0 0 0"
-	"nodeid" "11"
-	"spawnflags" "512"
-	"origin" "0 -256 64"
-	editor
-	{
-		"color" "232 219 8"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 15000]"
 	}
 }
 entity

@@ -513,13 +513,13 @@ void CASW_MarineSpeech::InternalPlayChatter(CASW_Marine* pMarine, const char* sz
 
 void CASW_MarineSpeech::Precache()
 {
-	if (!m_pMarine || !m_pMarine->GetMarineResource())
+	if (!m_pMarine || !m_pMarine->GetMarineProfile())
 	{
 		//Msg("Error: Attempted to precache marine speech when either marine is null or marine has no marine resource.");
 		return;
 	}
 	
-	CASW_Marine_Profile *profile= m_pMarine->GetMarineResource()->GetProfile();
+	CASW_Marine_Profile *profile= m_pMarine->GetMarineProfile();
 	// asw temp comment of speech
 	profile->PrecacheSpeech(m_pMarine);
 }
