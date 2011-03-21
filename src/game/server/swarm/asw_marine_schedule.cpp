@@ -871,6 +871,12 @@ int CASW_Marine::SelectHealSchedule()
 		}
 	}
 	CASW_SquadFormation *pSquad = GetSquadFormation();
+	CASW_Marine* pMarine = pSquad->Leader();
+	if ( pMarine && CanHeal() && pMarine->GetHealth() < pMarine->GetMaxHealth() * MARINE_START_HEAL_THRESHOLD )
+	{
+		m_hHealTarget = pMarine;
+		return SCHED_ASW_HEAL_MARINE;
+	}
 	for ( unsigned int i = 0; i < CASW_SquadFormation::MAX_SQUAD_SIZE; i++ )
 	{
 		CASW_Marine* pMarine = pSquad->Squaddie( i );
@@ -2458,6 +2464,8 @@ void CASW_Marine::RunTask( const Task_t *pTask )
 	}
 }
 
+static ConVar jas_medic_malfunction( "jas_medic_malfunction", "0", FCVAR_CHEAT | FCVAR_HIDDEN, "", true, 0, true, 1 );
+
 void CASW_Marine::CheckForAIWeaponSwitch()
 {
 	if ( !GetEnemy() )
@@ -2465,6 +2473,9 @@ void CASW_Marine::CheckForAIWeaponSwitch()
 
 	CASW_Weapon *pWeapon = GetActiveASWWeapon();
 	if ( pWeapon && pWeapon->IsOffensiveWeapon() && pWeapon->HasPrimaryAmmo() )
+		return;
+
+	if ( !jas_medic_malfunction.GetBool() && m_hHealTarget.Get() && pWeapon->Classify() == CLASS_ASW_HEAL_GUN )
 		return;
 
 	// see if any of our other inventory items are valid weapons

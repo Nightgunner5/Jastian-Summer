@@ -331,7 +331,10 @@ bool CASW_MarineSpeech::ForceChatter(int iChatterType, int iTimerType)
 
 bool CASW_MarineSpeech::Chatter(int iChatterType, int iSubChatter, CBasePlayer *pOnlyForPlayer)
 {
-	return false; // Jastian Summer marines only talk when cued
+#ifdef JASTIANSUMMER_DLL
+	if ( m_pMarine->GetEntityNameAsCStr() && !Q_stricmp( m_pMarine->GetEntityNameAsCStr(), "#asw_name_sarge" ) )
+		return false; // Player does not talk.
+#endif
 
 	if (iChatterType < 0 || iChatterType >= NUM_CHATTER_LINES)
 	{
