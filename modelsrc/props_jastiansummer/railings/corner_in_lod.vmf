@@ -1,0 +1,523 @@
+versioninfo
+{
+	"editorversion" "400"
+	"editorbuild" "5004"
+	"mapversion" "8"
+	"formatversion" "100"
+	"prefab" "0"
+}
+visgroups
+{
+}
+viewsettings
+{
+	"bSnapToGrid" "1"
+	"bShowGrid" "1"
+	"bShowLogicalGrid" "0"
+	"nGridSpacing" "2"
+	"bShow3DGrid" "0"
+}
+world
+{
+	"id" "1"
+	"mapversion" "8"
+	"classname" "worldspawn"
+	"detailmaterial" "detail/detailsprites"
+	"detailvbsp" "detail.vbsp"
+	"maxpropscreenwidth" "-1"
+	"skyname" "sky_day01_01"
+	solid
+	{
+		"id" "15"
+		side
+		{
+			"id" "48"
+			"plane" "(1.7325e-006 4 44) (4 4 44) (4 -2.08219e-006 44)"
+			"material" "MODELS/PROPS_JASTIANSUMMER/RAILINGS/RAILING_METAL"
+			"uaxis" "[0 -1 0 32] 0.25"
+			"vaxis" "[-1 0 0 -56] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "47"
+			"plane" "(4 4 4) (1.7325e-006 4 4) (1.55766e-006 -1.90735e-006 4)"
+			"material" "TOOLS/TOOLSNODRAW"
+			"uaxis" "[0 -1 0 32] 0.25"
+			"vaxis" "[-1 0 0 -56] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "46"
+			"plane" "(1.7325e-006 4 4) (4 4 4) (4 4 44)"
+			"material" "MODELS/PROPS_JASTIANSUMMER/RAILINGS/RAILING_METAL"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "45"
+			"plane" "(4 -2.08219e-006 4) (1.55766e-006 -1.90735e-006 4) (1.55766e-006 -1.90735e-006 44)"
+			"material" "MODELS/PROPS_JASTIANSUMMER/RAILINGS/RAILING_METAL"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "44"
+			"plane" "(4 4 4) (4 -2.08219e-006 4) (4 -2.08219e-006 44)"
+			"material" "MODELS/PROPS_JASTIANSUMMER/RAILINGS/RAILING_METAL"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "43"
+			"plane" "(1.55766e-006 -1.90735e-006 4) (1.7325e-006 4 4) (1.7325e-006 4 44)"
+			"material" "MODELS/PROPS_JASTIANSUMMER/RAILINGS/RAILING_METAL"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		editor
+		{
+			"color" "0 234 123"
+			"visgroupshown" "1"
+			"visgroupautoshown" "1"
+		}
+	}
+	solid
+	{
+		"id" "23"
+		side
+		{
+			"id" "60"
+			"plane" "(4 0 24) (4 4 24) (8 4 24)"
+			"material" "MODELS/PROPS_JASTIANSUMMER/RAILINGS/RAILING_METAL"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "59"
+			"plane" "(8 -2.25704e-006 20) (8 4 20) (4 4 20)"
+			"material" "MODELS/PROPS_JASTIANSUMMER/RAILINGS/RAILING_METAL"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "58"
+			"plane" "(4 4 24) (4 4 20) (8 4 20)"
+			"material" "MODELS/PROPS_JASTIANSUMMER/RAILINGS/RAILING_METAL"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "57"
+			"plane" "(8 -2.25704e-006 24) (8 -2.25704e-006 20) (4 0 20)"
+			"material" "MODELS/PROPS_JASTIANSUMMER/RAILINGS/RAILING_METAL"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "56"
+			"plane" "(8 4 24) (8 4 20) (8 -2.25704e-006 20)"
+			"material" "TOOLS/TOOLSNODRAW"
+			"uaxis" "[0 -1 0 32] 0.25"
+			"vaxis" "[0 0 -1 -16] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "55"
+			"plane" "(4 0 24) (4 0 20) (4 4 20)"
+			"material" "TOOLS/TOOLSNODRAW"
+			"uaxis" "[0 -1 0 32] 0.25"
+			"vaxis" "[0 0 -1 -16] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		editor
+		{
+			"color" "0 234 123"
+			"visgroupshown" "1"
+			"visgroupautoshown" "1"
+		}
+	}
+	solid
+	{
+		"id" "485"
+		side
+		{
+			"id" "458"
+			"plane" "(4 4 24) (0 4 24) (1.90735e-006 8 24)"
+			"material" "MODELS/PROPS_JASTIANSUMMER/RAILINGS/RAILING_METAL"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "457"
+			"plane" "(4 8 20) (1.90735e-006 8 20) (0 4 20)"
+			"material" "MODELS/PROPS_JASTIANSUMMER/RAILINGS/RAILING_METAL"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "456"
+			"plane" "(0 4 24) (0 4 20) (1.90735e-006 8 20)"
+			"material" "MODELS/PROPS_JASTIANSUMMER/RAILINGS/RAILING_METAL"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "455"
+			"plane" "(4 8 24) (4 8 20) (4 4 20)"
+			"material" "MODELS/PROPS_JASTIANSUMMER/RAILINGS/RAILING_METAL"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "454"
+			"plane" "(1.90735e-006 8 24) (1.90735e-006 8 20) (4 8 20)"
+			"material" "TOOLS/TOOLSNODRAW"
+			"uaxis" "[1 0 0 16] 0.25"
+			"vaxis" "[0 0 -1 -16] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "453"
+			"plane" "(4 4 24) (4 4 20) (0 4 20)"
+			"material" "TOOLS/TOOLSNODRAW"
+			"uaxis" "[1 0 0 16] 0.25"
+			"vaxis" "[0 0 -1 -16] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		editor
+		{
+			"color" "0 234 123"
+			"visgroupshown" "1"
+			"visgroupautoshown" "1"
+		}
+	}
+	solid
+	{
+		"id" "540"
+		side
+		{
+			"id" "476"
+			"plane" "(4 4 44) (0 4 44) (1.90735e-006 8 44)"
+			"material" "MODELS/PROPS_JASTIANSUMMER/RAILINGS/RAILING_METAL"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "475"
+			"plane" "(4 8 40) (1.90735e-006 8 40) (0 4 40)"
+			"material" "MODELS/PROPS_JASTIANSUMMER/RAILINGS/RAILING_METAL"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "474"
+			"plane" "(0 4 44) (0 4 40) (1.90735e-006 8 40)"
+			"material" "MODELS/PROPS_JASTIANSUMMER/RAILINGS/RAILING_METAL"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "473"
+			"plane" "(4 8 44) (4 8 40) (4 4 40)"
+			"material" "MODELS/PROPS_JASTIANSUMMER/RAILINGS/RAILING_METAL"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "472"
+			"plane" "(1.90735e-006 8 44) (1.90735e-006 8 40) (4 8 40)"
+			"material" "TOOLS/TOOLSNODRAW"
+			"uaxis" "[1 0 0 16] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "471"
+			"plane" "(4 4 44) (4 4 40) (0 4 40)"
+			"material" "TOOLS/TOOLSNODRAW"
+			"uaxis" "[1 0 0 16] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		editor
+		{
+			"color" "0 234 123"
+			"visgroupshown" "1"
+			"visgroupautoshown" "1"
+		}
+	}
+	solid
+	{
+		"id" "541"
+		side
+		{
+			"id" "482"
+			"plane" "(4 0 44) (4 4 44) (8 4 44)"
+			"material" "MODELS/PROPS_JASTIANSUMMER/RAILINGS/RAILING_METAL"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "481"
+			"plane" "(8 -2.25704e-006 40) (8 4 40) (4 4 40)"
+			"material" "MODELS/PROPS_JASTIANSUMMER/RAILINGS/RAILING_METAL"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "480"
+			"plane" "(4 4 44) (4 4 40) (8 4 40)"
+			"material" "MODELS/PROPS_JASTIANSUMMER/RAILINGS/RAILING_METAL"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "479"
+			"plane" "(8 -2.25704e-006 44) (8 -2.25704e-006 40) (4 0 40)"
+			"material" "MODELS/PROPS_JASTIANSUMMER/RAILINGS/RAILING_METAL"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "478"
+			"plane" "(8 4 44) (8 4 40) (8 -2.25704e-006 40)"
+			"material" "TOOLS/TOOLSNODRAW"
+			"uaxis" "[0 -1 0 32] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "477"
+			"plane" "(4 0 44) (4 0 40) (4 4 40)"
+			"material" "TOOLS/TOOLSNODRAW"
+			"uaxis" "[0 -1 0 32] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		editor
+		{
+			"color" "0 234 123"
+			"visgroupshown" "1"
+			"visgroupautoshown" "1"
+		}
+	}
+	solid
+	{
+		"id" "644"
+		side
+		{
+			"id" "507"
+			"plane" "(0 8 4) (8 8 4) (8 0 4)"
+			"material" "MODELS/PROPS_JASTIANSUMMER/RAILINGS/RAILING_METAL"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "508"
+			"plane" "(0 0 0) (8 0 0) (8 8 0)"
+			"material" "TOOLS/TOOLSNODRAW"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "509"
+			"plane" "(0 8 4) (0 0 4) (0 0 0)"
+			"material" "MODELS/PROPS_JASTIANSUMMER/RAILINGS/RAILING_METAL"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "510"
+			"plane" "(8 8 0) (8 0 0) (8 0 4)"
+			"material" "MODELS/PROPS_JASTIANSUMMER/RAILINGS/RAILING_METAL"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "511"
+			"plane" "(8 8 4) (0 8 4) (0 8 0)"
+			"material" "MODELS/PROPS_JASTIANSUMMER/RAILINGS/RAILING_METAL"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "512"
+			"plane" "(8 0 0) (0 0 0) (0 0 4)"
+			"material" "MODELS/PROPS_JASTIANSUMMER/RAILINGS/RAILING_METAL"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		editor
+		{
+			"color" "0 229 174"
+			"visgroupshown" "1"
+			"visgroupautoshown" "1"
+		}
+	}
+}
+entity
+{
+	"id" "168"
+	"classname" "propper_options"
+	"autocenter" "0"
+	"collisions" "0"
+	"concave" "1"
+	"disp_nowarp" "1"
+	"dontcompile" "1"
+	"dontfixmaterials" "1"
+	"materialpath" "models/props_jastiansummer/railings"
+	"modelname" "props_jastiansummer/railings/corner_in_lod"
+	"origin" "0 0 0"
+	"scale" "1.0"
+	"smoothangle" "45"
+	"smoothing" "1"
+	"snaptogrid" "0"
+	"sourcefolder" "J:/JastianSummer_git/modelsrc/"
+	"surfaceprop" "metal"
+	"weldvertices" ".01"
+	editor
+	{
+		"color" "255 150 0"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 9000]"
+	}
+}
+cameras
+{
+	"activecamera" "-1"
+}
+cordon
+{
+	"mins" "(-1024 -1024 -1024)"
+	"maxs" "(1024 1024 1024)"
+	"active" "0"
+}
