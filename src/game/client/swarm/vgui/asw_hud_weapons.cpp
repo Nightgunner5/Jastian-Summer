@@ -62,7 +62,12 @@ public:
 	virtual void Reset( void );
 	virtual void Paint();	
 	virtual void ApplySchemeSettings(IScheme *pScheme);
-	virtual bool ShouldDraw( void ) { return asw_draw_hud.GetBool() && CASW_HudElement::ShouldDraw(); }
+	virtual bool ShouldDraw( void ) {
+#ifdef JASTIANSUMMER_DLL
+		return false;
+#endif
+		return asw_draw_hud.GetBool() && CASW_HudElement::ShouldDraw();
+	}
 	
 	vgui::HFont m_hWeaponHUDFont;
 	vgui::DHANDLE<CASWHudUseArea> m_hUseArea;

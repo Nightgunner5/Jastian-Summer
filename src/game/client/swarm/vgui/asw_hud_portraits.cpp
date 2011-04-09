@@ -303,5 +303,8 @@ void CASWHudPortraits::PerformLayout()
 
 bool CASWHudPortraits::ShouldDraw( void )
 {
+#ifdef JASTIANSUMMER_DLL
+	return false;
+#endif
 	return CASW_HudElement::ShouldDraw() && asw_draw_hud.GetBool() && !asw_portraits_hide.GetBool();
 }

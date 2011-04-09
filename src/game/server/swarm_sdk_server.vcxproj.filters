@@ -2321,6 +2321,15 @@
     <ClCompile Include="swarm\jas_generatorsparks.cpp">
       <Filter>Source Files\Swarm</Filter>
     </ClCompile>
+    <ClCompile Include="swarm\jas_marine_jack.cpp">
+      <Filter>Source Files\Swarm</Filter>
+    </ClCompile>
+    <ClCompile Include="swarm\asw_drone_advanced_advanced.cpp">
+      <Filter>Source Files\Swarm</Filter>
+    </ClCompile>
+    <ClCompile Include="hl2\grenade_spit.cpp">
+      <Filter>Source Files\From HL2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\shared\achievement_saverestore.h">
@@ -4734,6 +4743,15 @@
     </ClInclude>
     <ClInclude Include="swarm\jas_marine_spawner.h">
       <Filter>Source Files\Swarm</Filter>
+    </ClInclude>
+    <ClInclude Include="swarm\asw_drone_advanced_advanced.h">
+      <Filter>Source Files\Swarm</Filter>
+    </ClInclude>
+    <ClInclude Include="hl2\grenade_spit.h">
+      <Filter>Source Files\From HL2</Filter>
+    </ClInclude>
+    <ClInclude Include="hl2\npc_antlion.h">
+      <Filter>Source Files\From HL2</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

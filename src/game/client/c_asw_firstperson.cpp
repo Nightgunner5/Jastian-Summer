@@ -8,7 +8,7 @@
 
 C_ASW_FirstPerson* g_pFirstPerson = NULL;
 extern ConVar asw_controls;
-extern ConVar asw_draw_hud;
+//extern ConVar asw_draw_hud;
 
 C_ASW_FirstPerson::C_ASW_FirstPerson()
 {
@@ -77,7 +77,7 @@ const char *C_ASW_FirstPerson::ParseEntity( const char *pEntData )
 
 		engine->ClientCmd( "cl_selectm 0 -1" );
 		engine->ClientCmd( "cl_start" );
-		asw_draw_hud.SetValue( 0 );
+		//asw_draw_hud.SetValue( 0 );
 
 		return entData.CurrentBufferPosition();
 	}

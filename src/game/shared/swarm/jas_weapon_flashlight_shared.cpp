@@ -130,6 +130,31 @@ void CJaS_Weapon_Flashlight::PrimaryAttack( void )
 	// do nothing
 }
 
+int CJaS_Weapon_Flashlight::ASW_SelectWeaponActivity(int idealActivity)
+{
+	if ( !GetOwner() )
+		return idealActivity;
+
+	static int ACT_WALK_CROUCH_AIM_RIFLE	= GetOwner()->LookupActivity( "ACT_WALK_CROUCH_AIM_RIFLE" );
+	static int ACT_COVER_LOW_RPG			= GetOwner()->LookupActivity( "ACT_COVER_LOW_RPG" );
+	static int ACT_RUN_CROUCH_AIM_RIFLE		= GetOwner()->LookupActivity( "ACT_RUN_CROUCH_AIM_RIFLE" );
+	static int ACT_WALK_AIM_AR2				= GetOwner()->LookupActivity( "ACT_WALK_AIM_AR2" );
+	static int ACT_RUN_AIM_AR2				= GetOwner()->LookupActivity( "ACT_RUN_AIM_AR2" );
+	static int ACT_IDLE_AR2					= GetOwner()->LookupActivity( "ACT_IDLE_AR2" );
+
+	switch( idealActivity )
+	{
+		case ACT_WALK_CROUCH:	idealActivity = ACT_WALK_CROUCH_AIM_RIFLE; break;
+		case ACT_CROUCHIDLE:	idealActivity = ACT_COVER_LOW_RPG; break;
+		case ACT_RUN_CROUCH:	idealActivity = ACT_RUN_CROUCH_AIM_RIFLE; break;
+		case ACT_WALK:			idealActivity = ACT_WALK_AIM_AR2; break;
+		case ACT_RUN:			idealActivity = ACT_RUN_AIM_AR2; break;
+		case ACT_IDLE:			idealActivity = ACT_IDLE_AR2; break;
+		default: break;
+	}
+	return idealActivity;
+}
+
 void CJaS_Weapon_Flashlight::Precache()
 {
 	BaseClass::Precache();

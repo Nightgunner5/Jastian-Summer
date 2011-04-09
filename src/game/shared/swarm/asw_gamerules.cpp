@@ -2383,6 +2383,7 @@ bool CAlienSwarm::SpawnMarineAt( CASW_Marine_Resource * RESTRICT pMR, const Vect
 	UTIL_SetSize(pMarine, pMarine->GetHullMins(),pMarine->GetHullMaxs());
 	pMR->SetMarineEntity(pMarine);
 
+#ifndef JASTIANSUMMER_DLL
 	if ( ASWHoldoutMode() && bResurrection )
 	{
 		// give the pMarine the equipment selected on the briefing screen
@@ -2401,6 +2402,7 @@ bool CAlienSwarm::SpawnMarineAt( CASW_Marine_Resource * RESTRICT pMR, const Vect
 			pMR->m_iInitialWeaponsInSlots[ iWpnSlot ] = pMR->m_iWeaponsInSlots.Get( iWpnSlot );
 		}
 	}
+#endif
 
 	pMarine->GetMarineResource()->UpdateWeaponIndices();
 

@@ -84,7 +84,7 @@ void CASWInput::ApplyMouse( int nSlot, QAngle& viewangles, CUserCmd *cmd, float 
 	if ( ASWInput()->ControllerModeActive() )
 		return;
 		
-	if ( asw_controls.GetBool() && !MarineControllingTurret() )
+	if ( asw_controls.GetBool() && !MarineControllingTurret() && !MarineUsingComputer() )
 	{
 		TurnTowardMouse( viewangles, cmd );
 

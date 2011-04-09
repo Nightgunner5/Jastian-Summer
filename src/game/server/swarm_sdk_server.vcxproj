@@ -510,6 +510,7 @@ exit 1
     <ClCompile Include="globalstate.cpp" />
     <ClCompile Include="grenadethrown.cpp" />
     <ClCompile Include="guntarget.cpp" />
+    <ClCompile Include="hl2\grenade_spit.cpp" />
     <ClCompile Include="h_ai.cpp" />
     <ClCompile Include="h_export.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -741,10 +742,12 @@ exit 1
     <ClCompile Include="sun.cpp" />
     <ClCompile Include="sunlightshadowcontrol.cpp" />
     <ClCompile Include="..\shared\takedamageinfo.cpp" />
+    <ClCompile Include="swarm\asw_drone_advanced_advanced.cpp" />
     <ClCompile Include="swarm\jas_alien_controller.cpp" />
     <ClCompile Include="swarm\jas_clone.cpp" />
     <ClCompile Include="swarm\jas_fireflies.cpp" />
     <ClCompile Include="swarm\jas_generatorsparks.cpp" />
+    <ClCompile Include="swarm\jas_marine_jack.cpp" />
     <ClCompile Include="swarm\jas_marine_spawner.cpp" />
     <ClCompile Include="tanktrain.cpp" />
     <ClCompile Include="team.cpp" />
@@ -1322,6 +1325,8 @@ exit 1
     <ClInclude Include="..\shared\hintmessage.h" />
     <ClInclude Include="..\shared\hintsystem.h" />
     <ClInclude Include="..\..\common\hl2orange.spa.h" />
+    <ClInclude Include="hl2\grenade_spit.h" />
+    <ClInclude Include="hl2\npc_antlion.h" />
     <ClInclude Include="hltvdirector.h" />
     <ClInclude Include="..\shared\ichoreoeventcallback.h" />
     <ClInclude Include="..\shared\igamesystem.h" />
@@ -1419,6 +1424,7 @@ exit 1
     <ClInclude Include="..\..\public\vphysics\stats.h" />
     <ClInclude Include="..\..\public\steam\steam_api.h" />
     <ClInclude Include="..\..\public\stringregistry.h" />
+    <ClInclude Include="swarm\asw_drone_advanced_advanced.h" />
     <ClInclude Include="swarm\jas_alien_controller.h" />
     <ClInclude Include="swarm\jas_clone.h" />
     <ClInclude Include="swarm\jas_marine_spawner.h" />

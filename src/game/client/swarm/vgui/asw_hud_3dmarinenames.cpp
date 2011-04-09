@@ -139,6 +139,10 @@ bool CASWHud3DMarineNames::ShouldDraw( void )
 	//	return false;
 	//}
 
+#ifdef JASTIANSUMMER_DLL
+	return false;
+#endif
+
 	return asw_draw_hud.GetBool() && CASW_HudElement::ShouldDraw();
 }
 void CASWHud3DMarineNames::OnThink()

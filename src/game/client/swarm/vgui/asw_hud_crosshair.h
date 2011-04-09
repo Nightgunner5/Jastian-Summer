@@ -31,7 +31,12 @@ public:
 	int					GetCurrentCrosshair( int x, int y );
 	void				SetShowGiveAmmo (bool b, int iAmmoType ) { m_bShowGiveAmmo = b; m_iShowGiveAmmoType = iAmmoType; }
 	void				SetShowGiveHealth(bool b) { m_bShowGiveHealth = b; }
-	virtual bool		ShouldDraw( void ) { return asw_draw_hud.GetBool() && CASW_HudElement::ShouldDraw(); }
+	virtual bool		ShouldDraw( void ) {
+#ifdef JASTIANSUMMER_DLL
+		return false;
+#endif
+		return asw_draw_hud.GetBool() && CASW_HudElement::ShouldDraw();
+	}
 
 	void				DrawSniperScope( int x, int y );
 

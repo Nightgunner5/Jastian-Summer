@@ -709,7 +709,7 @@ public:
 	void SetNextStumbleTime( float flStumbleTime ) { m_flNextStumbleTime = flStumbleTime; }
 	float m_flNextStumbleTime;
 	CHandle<CASW_SquadFormation> m_hSquadFormation;
-private:
+protected:
 	float m_flNextBreadcrumbTime;
 	CASW_Marine_Profile *m_pProfileOverride;
 };

@@ -27,15 +27,15 @@ public:
 	virtual ~CJaS_Weapon_Flashlight();
 	void Precache();
 	
-	Activity	GetPrimaryAttackActivity( void );
+	Activity GetPrimaryAttackActivity( void );
 
-	void	PrimaryAttack();
+	void PrimaryAttack();
 
 	#ifndef CLIENT_DLL
 		DECLARE_DATADESC();
 
 		// todo: stop AI attacking with this?
-		int		CapabilitiesGet( void ) { return bits_CAP_WEAPON_RANGE_ATTACK1; }
+		int	CapabilitiesGet( void ) { return bits_CAP_WEAPON_RANGE_ATTACK1; }
 
 		virtual const char* GetPickupClass() { return "jas_pickup_flashlight"; }
 
@@ -49,7 +49,9 @@ public:
 
 	virtual bool IsOffensiveWeapon() { return false; }
 
-	virtual bool ASWCanBeSelected() { return true; }	// no selecting this
+	virtual bool ASWCanBeSelected() { return true; }
+
+	virtual int ASW_SelectWeaponActivity(int idealActivity);
 
 	// Classification
 	virtual Class_T		Classify( void ) { return (Class_T) CLASS_ASW_FLASHLIGHT; }

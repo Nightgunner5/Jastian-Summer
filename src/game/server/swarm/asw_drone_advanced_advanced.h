@@ -5,15 +5,12 @@
 // $NoKeywords: $
 //=============================================================================//
 
-#ifndef NPC_ANTLION_H
-#define NPC_ANTLION_H
+#ifndef ASW_DRONE_ADVANCED_ADVANCED_H
+#define ASW_DRONE_ADVANCED_ADVANCED_H
 #ifdef _WIN32
 #pragma once
 #endif
 
-#ifdef JASTIANSUMMER_DLL
-#include "asw_drone_advanced_advanced.h"
-#else
 #include "ai_blended_movement.h"
 #include "soundent.h"
 #include "ai_behavior_follow.h"
@@ -172,7 +169,7 @@ public:
 
 	void	ClearBurrowPoint( const Vector &origin );
 
-	void Flip( bool bZapped = false, Vector vForce = vec3_origin );
+	void	Flip( bool bZapped = false );
 
 	bool CanBecomeRagdoll();
 
@@ -233,7 +230,7 @@ private:
 	bool SeenEnemyWithinTime( float flTime );
 	void DelaySquadAttack( float flDuration );
 
-#if HL2_EPISODIC
+#if JASTIANSUMMER_DLL
 	void DoPoisonBurst();
 #endif
 
@@ -281,7 +278,7 @@ private:
 	bool		m_bDontExplode;			// Suppresses worker poison burst when drowning, failing to unburrow, etc.
 	bool		m_bLoopingStarted;
 	bool		m_bSuppressUnburrowEffects;	// Don't kick up dust when spawning
-#if HL2_EPISODIC
+#if JASTIANSUMMER_DLL
 	bool		m_bHasDoneAirAttack;  ///< only allowed to apply this damage once per glide
 #endif
 
@@ -414,8 +411,8 @@ private:
 extern bool IsAntlion( CBaseEntity *pEntity );
 extern bool IsAntlionWorker( CBaseEntity *pEntity );
 
-#ifdef HL2_EPISODIC
+#ifdef JASTIANSUMMER_DLL
 extern float AntlionWorkerBurstRadius( void );
-#endif // HL2_EPISODIC
-#endif
-#endif // NPC_ANTLION_H
+#endif // JASTIANSUMMER_DLL
+
+#endif // ASW_DRONE_ADVANCED_ADVACNED_H

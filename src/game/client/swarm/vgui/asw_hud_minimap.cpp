@@ -541,6 +541,9 @@ void CASWHudMinimapFramePanel::Paint()
 	CASWHudMinimap *m_pMap = dynamic_cast<CASWHudMinimap*>(GetParent());
 	if ( !m_pMap || !asw_draw_hud.GetBool() )
 		return;
+#ifdef JASTIANSUMMER_DLL
+	return;
+#endif
 
 	int x, y, wide, tall;
 	m_pMap->GetBounds(x,y,wide,tall);
@@ -1712,6 +1715,10 @@ void CASWHudMinimap_Border::PaintBackground()
 	}
 	if (m_pMinimap && !m_pMinimap->ShouldDraw())
 		return;
+
+#ifdef JASTIANSUMMER_DLL
+	return;
+#endif
 
 	if ( !asw_draw_hud.GetBool() || m_nBlackBarTexture == -1 )
 	{
