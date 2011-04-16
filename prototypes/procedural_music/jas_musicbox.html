@@ -1,0 +1,66 @@
+<audio src="a.ogg" id="a"/>
+<audio src="as.ogg" id="as"/>
+<audio src="b.ogg" id="b"/>
+<audio src="c.ogg" id="c"/>
+<audio src="cs.ogg" id="cs"/>
+<audio src="d.ogg" id="d"/>
+<audio src="ds.ogg" id="ds"/>
+<audio src="e.ogg" id="e"/>
+<audio src="f.ogg" id="f"/>
+<audio src="fs.ogg" id="fs"/>
+<audio src="g.ogg" id="g"/>
+<audio src="gs.ogg" id="gs"/>
+<script type="text/javascript">
+var rb = function(){return ~~(Math.random()*2)},
+	lll = rb(),
+	llo = rb(),
+	lol = rb(),
+	loo = rb(),
+	oll = rb(),
+	olo = rb(),
+	ool = rb(),
+	ooo = rb();
+
+var notes = ['c', 'cs', 'd', 'ds', 'e', 'f', 'fs', 'g', 'gs', 'a', 'as', 'b'],
+	keys = {
+	//  C  C# D  D# E  F  F# G  G# A  A# B
+	C :[1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1],
+	Cs:[0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0],
+/*	D :[D | E | Fsharp | G | A | B | Csharp],
+	Ds:[Dsharp | Esharp | F | Gsharp | Asharp | Bsharp | C],
+	E :[E | Fsharp | Gsharp | A | B | Csharp | Dsharp],
+	F :[F | G | A | Bflat | C | D | E],
+	Fs:[Fsharp | Gsharp | Asharp | B | Csharp | Dsharp | Esharp],
+	G :[G | A | B | C | D | E | Fsharp],
+	Gs:[Gsharp | Asharp | Bsharp | Csharp | Dsharp | Esharp | F],
+	A :[A | B | Csharp | D | E | Fsharp | Gsharp],
+	As:[Asharp | Bsharp | C | Dsharp | Esharp | F | G],
+	B :[B | Csharp | Dsharp | E | Fsharp | Gsharp | Asharp]
+*/},
+	key = keys.C;
+
+// Randomize the first row
+var row_now = [rb(), rb(), rb(), rb(), rb(), rb(), rb(), rb(), rb(), rb(), rb(), rb()],
+	row_prev = [];
+
+function $(e){return document.getElementById(e)}
+
+setInterval(function(){
+	row_prev = row_now;
+	row_now = [];
+
+	for ( var i = 0; i < 12; i++ ) {
+		var note = '';
+		for ( var j = 11; j < 14; j++ ) {
+			if ( row_prev[( i + j ) % 12] )
+				note += 'l';
+			else
+				note += 'o';
+		}
+		row_now[i] = window[note];
+
+		if ( key[i] && row_now[i] )
+			$( notes[i] ).play();
+	}
+}, 500);
+</script>
