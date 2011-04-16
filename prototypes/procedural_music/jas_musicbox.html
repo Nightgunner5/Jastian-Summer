@@ -1,52 +1,125 @@
-<audio src="a.ogg" id="a"/>
-<audio src="as.ogg" id="as"/>
-<audio src="b.ogg" id="b"/>
-<audio src="c.ogg" id="c"/>
-<audio src="cs.ogg" id="cs"/>
-<audio src="d.ogg" id="d"/>
-<audio src="ds.ogg" id="ds"/>
-<audio src="e.ogg" id="e"/>
-<audio src="f.ogg" id="f"/>
-<audio src="fs.ogg" id="fs"/>
-<audio src="g.ogg" id="g"/>
-<audio src="gs.ogg" id="gs"/>
+<body>
+<audio src="a.ogg" id="a"></audio>
+<audio src="as.ogg" id="as"></audio>
+<audio src="b.ogg" id="b"></audio>
+<audio src="c.ogg" id="c"></audio>
+<audio src="cs.ogg" id="cs"></audio>
+<audio src="d.ogg" id="d"></audio>
+<audio src="ds.ogg" id="ds"></audio>
+<audio src="e.ogg" id="e"></audio>
+<audio src="f.ogg" id="f"></audio>
+<audio src="fs.ogg" id="fs"></audio>
+<audio src="g.ogg" id="g"></audio>
+<audio src="gs.ogg" id="gs"></audio>
+Major:
+<button onclick="key=keys.C">C</button>
+<button onclick="key=keys.Cs">C#</button>
+<button onclick="key=keys.D">D</button>
+<button onclick="key=keys.Ds">D#</button>
+<button onclick="key=keys.E">E</button>
+<button onclick="key=keys.F">F</button>
+<button onclick="key=keys.Fs">F#</button>
+<button onclick="key=keys.G">G</button>
+<button onclick="key=keys.Gs">G#</button>
+<button onclick="key=keys.A">A</button>
+<button onclick="key=keys.As">A#</button>
+<button onclick="key=keys.B">B</button>
+<br/>
+Cellular Automata:
+<input type="checkbox" id="lll" onchange="lll=this.checked"/>
+<input type="checkbox" id="llo" onchange="llo=this.checked"/>
+<input type="checkbox" id="lol" onchange="lol=this.checked"/>
+<input type="checkbox" id="loo" onchange="loo=this.checked"/>
+<input type="checkbox" id="oll" onchange="oll=this.checked"/>
+<input type="checkbox" id="olo" onchange="olo=this.checked"/>
+<input type="checkbox" id="ool" onchange="ool=this.checked"/>
+<input type="checkbox" id="ooo" onchange="ooo=this.checked"/>
 <script type="text/javascript">
+function $(e){return document.getElementById(e)}
+
 var rb = function(){return ~~(Math.random()*2)},
-	lll = rb(),
-	llo = rb(),
-	lol = rb(),
-	loo = rb(),
-	oll = rb(),
-	olo = rb(),
-	ool = rb(),
-	ooo = rb();
+	lll = $( 'lll' ).checked = rb(),
+	llo = $( 'llo' ).checked = rb(),
+	lol = $( 'lol' ).checked = rb(),
+	loo = $( 'loo' ).checked = rb(),
+	oll = $( 'oll' ).checked = rb(),
+	olo = $( 'olo' ).checked = rb(),
+	ool = $( 'ool' ).checked = rb(),
+	ooo = $( 'ooo' ).checked = rb();
 
 var notes = ['c', 'cs', 'd', 'ds', 'e', 'f', 'fs', 'g', 'gs', 'a', 'as', 'b'],
 	keys = {
 	//  C  C# D  D# E  F  F# G  G# A  A# B
 	C :[1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1],
 	Cs:[0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0],
-/*	D :[D | E | Fsharp | G | A | B | Csharp],
-	Ds:[Dsharp | Esharp | F | Gsharp | Asharp | Bsharp | C],
-	E :[E | Fsharp | Gsharp | A | B | Csharp | Dsharp],
-	F :[F | G | A | Bflat | C | D | E],
-	Fs:[Fsharp | Gsharp | Asharp | B | Csharp | Dsharp | Esharp],
-	G :[G | A | B | C | D | E | Fsharp],
-	Gs:[Gsharp | Asharp | Bsharp | Csharp | Dsharp | Esharp | F],
-	A :[A | B | Csharp | D | E | Fsharp | Gsharp],
-	As:[Asharp | Bsharp | C | Dsharp | Esharp | F | G],
-	B :[B | Csharp | Dsharp | E | Fsharp | Gsharp | Asharp]
-*/},
-	key = keys.C;
+	D :[0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1],
+	Ds:[1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0],
+	E :[0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1],
+	F :[1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0],
+	Fs:[0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1],
+	G :[1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1],
+	Gs:[1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0],
+	A :[0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1],
+	As:[1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0],
+	B :[0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1]
+},
+	key = keys.Fs;
 
 // Randomize the first row
 var row_now = [rb(), rb(), rb(), rb(), rb(), rb(), rb(), rb(), rb(), rb(), rb(), rb()],
-	row_prev = [];
+	row_prev;
 
-function $(e){return document.getElementById(e)}
+// Run the simulation five times to avoid CLASH at beginning
+for ( var r = 0; r < 5; r++ ) {
+	row_prev = row_now;
+	row_now = [];
+
+	for ( var i = 0; i < 12; i++ ) {
+		var note = '';
+		for ( var j = 11; j < 14; j++ ) {
+			if ( row_prev[( i + j ) % 12] )
+				note += 'l';
+			else
+				note += 'o';
+		}
+		row_now[i] = window[note];
+	}
+}
+
+function decay( row ) {
+	if ( rb() && rb() && rb() && rb() ) // 1 in 16 chance
+		row[~~( Math.random() * 12 )] = rb(); // Actually, 1 in 32, but whatever
+	return row;
+}
+
+function avoid_death( row ) {
+	if ( row[0] || row[1] || row[2] || row[3] || row[4] || row[5] || row[6] || row[7] || row[8] || row[9] || row[10] || row[11] )
+		return decay( row );
+
+	var row_now = [rb(), rb(), rb(), rb(), rb(), rb(), rb(), rb(), rb(), rb(), rb(), rb()],
+		row_prev;
+
+	for ( var r = 0; r < 5; r++ ) {
+		row_prev = row_now;
+		row_now = [];
+
+		for ( var i = 0; i < 12; i++ ) {
+			var note = '';
+			for ( var j = 11; j < 14; j++ ) {
+				if ( row_prev[( i + j ) % 12] )
+					note += 'l';
+				else
+					note += 'o';
+			}
+			row_now[i] = window[note];
+		}
+	}
+
+	return row_now;
+}
 
 setInterval(function(){
-	row_prev = row_now;
+	row_prev = avoid_death( row_now );
 	row_now = [];
 
 	for ( var i = 0; i < 12; i++ ) {
@@ -64,3 +137,4 @@ setInterval(function(){
 	}
 }, 500);
 </script>
+</body>
